@@ -1,16 +1,20 @@
 module.exports = {
-  input: 'src/index.js',
-  outDir: 'dist',
-  format: ['cjs', 'es', 'umd-min'],
-  moduleName: 'VuePlyr',
+  input: {
+    'vue-plyr': 'src/index.js'
+  },
+  output: {
+    format: ['cjs', 'es', 'umd', 'umd-min'],
+    moduleName: 'VuePlyr'
+  },
   postcss: {
     extract: true
   },
-  plugins: [
-    'vue'
-  ],
-  babel: {
-    runtimeHelpers: true,
-    extensions: ['.js', '.vue']
+  plugins: {
+    vue: true,
+    babel: {
+      runtimeHelpers: true,
+      sourceMap: true,
+      extensions: ['.js', '.vue']
+    }
   }
 }
